@@ -1,0 +1,356 @@
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  background-color: #121114;
+  font-size: 14px;
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+html[data-show-splash="true"] {
+  background: #121114 url(../images/bg.jpg) 50% 0 fixed no-repeat;
+  background-size: cover;
+  overflow: visible;
+}
+
+body {
+  color: #ccc;
+  font: 1rem/1.5 -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a,
+.button-splash,
+.border-splash {
+  transition: .1s all ease-in-out;
+}
+
+a {
+  color: #ccc;
+}
+
+a:hover {
+  color: #eee;
+  text-decoration: none;
+}
+
+.c:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.container,
+.preloader {
+  height: 100%;
+  left: 0;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+html[data-show-splash="true"] .container,
+html[data-show-splash="true"] .preloader {
+  display: none;
+}
+
+.wrap {
+  margin: 0 auto;
+  min-width: 300px;
+  max-width: 600px;
+  padding: 1rem 2rem;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.logoExperience {
+  background: url(../images/logoExperienceOnly.png) 50% no-repeat;
+  background-size: contain;
+  height: 80px;
+  text-indent: -9999px;
+}
+
+.logoMozillaVR a {
+  background: url(../images/logoMozillaVR.png) 50% no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  display: block;
+  height: 36px;
+  text-indent: -9999px;
+}
+
+.splash {
+  display: none;
+  position: relative;
+  z-index: 2;
+}
+
+html[data-show-splash="true"] .splash {
+  display: block;
+}
+
+#launchBody {
+  clear: both;
+  width: 100%;
+}
+
+#buttons {
+  margin: 0 auto;
+  width: 640px;
+}
+
+.buttonContainer {
+  cursor: pointer;
+  display: inline-block;
+  margin: 30px auto 15px;
+  max-width: 300px;
+  min-width: 280px;
+  text-align: center;
+}
+
+.buttonContainer + .buttonContainer {
+  margin-left: 30px;
+}
+
+.button-fake,
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+a.buttonContainer,
+a.buttonContainer:hover {
+  text-decoration: none;
+}
+
+.button-splash,
+.border-splash {
+  transition: .1s all ease-in-out;
+}
+
+.button-splash {
+  background: none;
+  border: 0;
+  display: block;
+  padding: 10px 0;
+}
+
+.border-splash {
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.25);
+  box-shadow: 0 0 0 4px hsla(0,0%,50%,.15);
+  width: 100%;
+}
+
+.button-fake .border-splash {
+  color: #ccc;
+  display: inline-block;
+  font-size: 24px;
+  height: 64px;
+  line-height: 64px;
+  position: relative;
+  top: -10px;
+  left: -10px;
+  text-align: center;
+}
+
+.mode-options .button-fake .border-splash {
+  margin: 20px 10px 0;
+}
+
+a:hover .border-splash,
+.enter-vr:hover .border-splash {
+  background: rgba(255,255,255,.3);
+  box-shadow: 0 0 0 4px hsla(0,0%,50%,.3),
+    0 0 0 5px hsla(0,0%,90%,.05),
+    inset 0 0 0 4px rgba(255,255,255,.15);
+  border-color: rgba(255,255,255,.5);
+  color: #fff;
+}
+
+.buttonAlert {
+  margin-top: 0;
+  text-align: center;
+}
+
+.dimmed {
+  opacity: .75;
+}
+
+a:hover .buttonAlert,
+.dimmed:hover .border-splash {
+  opacity: 1;
+}
+
+.wrap-copy p + p {
+  margin-top: .75rem;
+}
+
+.wrap-copy p a {
+  font-weight: 500;
+}
+
+@media (max-height: 760px), (max-width: 640px) {
+  .wrap-copy {
+    max-width: 500px;
+  }
+
+  .logoExperience {
+    height: 48px;
+  }
+
+  .logoMozillaVR a {
+    height: 29px;
+  }
+}
+
+@media (max-width: 719px) {
+  #buttons {
+    margin: 0 auto;
+    width: 300px;
+  }
+
+  .buttonContainer {
+    float: left;
+    margin-bottom: 15px;
+    width: 300px;
+  }
+
+  .buttonContainer + .buttonContainer {
+    margin-left: 0;
+  }
+
+  .buttonContainer img {
+    display: none;
+  }
+}
+
+/* Begin preloader styles. */
+@keyframes preloader-anim {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.preloader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.preloader > div {
+  animation: preloader-anim 1s linear infinite;
+  border-radius: 80px;
+  box-shadow: 0 6px 0 0 rgba(255,255,255,.1);
+  display: block;
+  height: 160px;
+  width: 160px;
+}
+
+.hidden {
+  animation: none !important;
+  display: none !important;
+  transform: none !important;
+  transition-property: none !important;
+}
+/* End preloader styles. */
+
+.enter-vr {
+  align-items: center;
+  bottom: 0;
+  color: #ccc;
+  cursor: pointer;
+  display: flex;
+  font-size: 1.5rem;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.button-enter-vr {
+  pointer-events: none;
+}
+
+.button-splash.button-enter-vr .border-splash {
+  position: static;
+  padding: 0 4rem;
+}
+
+.button-splash.button-enter-vr .border-splash {
+  background: rgba(0,255,255,.1);
+  border: 1px solid rgba(0,255,255,.25);
+  box-shadow: 0 0 0 4px hsla(0,0%,50%,.15);
+}
+
+.enter-vr:hover .border-splash {
+  background: rgba(0,255,255,.3);
+  box-shadow: 0 0 0 4px hsla(0,0%,0%,.3),
+    0 0 0 5px hsla(0,0%,90%,.05),
+    inset 0 0 0 4px rgba(0,255,255,.15);
+  border-color: rgba(0,255,255,.5);
+}
+
+.footer p + p {
+  margin-top: .75rem;
+}
+
+.footer p a {
+  font-weight: 500;
+}
+
+.alert-learn {
+  background: rgba(54, 200, 54, 0.5);
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.5);
+  color: rgba(255,255,255,.5);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 1rem auto 1.25rem;
+}
+
+.alert-learn a {
+  color: rgba(255,255,255,.5);
+}
+
+.alert-learn a:hover {
+  color: rgba(255,255,255,.85);
+}
+
+.alert-learn a.blog-link {
+  color: #fff;
+  font-size: 2rem;
+}
+
+@media (max-width: 639px) {
+  .alert-learn {
+    margin: 2rem auto 2.25rem;
+  }
+
+  .wrap-copy-footer {
+    max-width: 80%;
+  }
+}

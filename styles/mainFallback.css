@@ -1,0 +1,140 @@
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  background-size: cover;
+  background: #121114 url(../images/bgFallback.jpg) 50% 100% fixed no-repeat;
+  font-size: 14px;
+  padding: 2rem 0;
+}
+
+body {
+  color: #ccc;
+  font: 1rem/1.5 -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: #ccc;
+}
+
+a:hover {
+  color: #eee;
+  text-decoration: none;
+}
+
+.logoExperience {
+  background: url(../images/logoExperienceOnly.png) 50% no-repeat;
+  background-size: contain;
+  height: 80px;
+  text-indent: -9999px;
+}
+
+.logoMozillaVR a {
+  background: url(../images/logoMozillaVR.png) 50% no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  display: block;
+  height: 36px;
+  text-indent: -9999px;
+}
+
+.iframe {
+  border: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.iframe-video-container {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;  /* 16:9 */
+  position: relative;
+}
+
+.iframe-video {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.fallback-footer {
+  opacity: .7;
+  padding-bottom: 2vw;
+  width: 100%;
+}
+
+.alert-learn {
+  background: rgba(200, 54, 54, 0.5);
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.5);
+  font-size: 1rem;
+  margin: 1rem auto 1.25rem;
+}
+
+.wrap {
+  margin: 0 auto;
+  min-width: 300px;
+  max-width: 600px;
+  padding: 1rem 2rem;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.read-more {
+  font-size: 2rem;
+  line-height: 1.7;
+  padding-top: .5rem;
+  text-align: center;
+}
+
+.wrap-copy p + p {
+  margin-top: .75rem;
+}
+
+.wrap-copy a {
+  font-weight: 500;
+}
+
+@media (max-height: 760px), (max-width: 640px) {
+  .wrap-copy {
+    max-width: 500px;
+  }
+
+  .logoExperience {
+    height: 48px;
+  }
+
+  .logoMozillaVR a {
+    height: 29px;
+  }
+}
+
+@media (max-width: 639px) {
+  .alert-learn {
+    margin: 2rem auto 2.25rem;
+  }
+
+  .wrap-copy br {
+    display: none;
+  }
+
+  .wrap-copy-footer {
+    max-width: 80%;
+  }
+}
